@@ -17,7 +17,10 @@ function handleCellPlayed() {
   clickedCell.innerHTML = currentPlayer;
 }
 
-function handlePlayerChange() {}
+function handlePlayerChange() {
+  currentPlayer = currentPlayer === 'X' ? 'O': 'X'
+  statusDisplay.innerHTML = currentPlayerTurn()
+}
 const winningConditions = [
   [0, 1, 3],
   [3, 4, 5],
