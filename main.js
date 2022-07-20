@@ -12,24 +12,28 @@ const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
 
 statusDisplay.innerHTML = currentPlayerTurn();
 
-function handleCellPlayed() {
+function handleCellPlayed() {}
 
-}
-
-function handlePlayerChange() {
-
-}
-function handleResultValidation() {
-
-}
+function handlePlayerChange() {}
+function handleResultValidation() {}
 
 function handleCellClick() {
+  const clickedCell = clickedCellEvent.target;
 
+  const clickedCellIndex = parseInt(
+    clickedCell.getAttribute("data-cell-index")
+  );
+
+  if (gameState[clickedCellIndex] !== "" || !gameActive) {
+    return;
+  }
 }
 
-function handleRestartGame() {
+function handleRestartGame() {}
 
-}
-
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
-document.querySelector('.game--restart').addEventListener('click', handleRestartGame)
+document
+  .querySelectorAll(".cell")
+  .forEach((cell) => cell.addEventListener("click", handleCellClick));
+document
+  .querySelector(".game--restart")
+  .addEventListener("click", handleRestartGame);
